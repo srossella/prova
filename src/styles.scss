@@ -1,0 +1,364 @@
+:root {
+  --primary-color: #4caf50;
+  --primary-hover-color: #45a049;
+  --secondary-color: #f3e8dc;
+  --secondary-hover-color: #e0d4c0;
+  --background-color: #f9f4ee;
+  --text-color: #333;
+  --heading-color: #444;
+  --border-color: #e0e0e0;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --overlay-background: rgba(0, 0, 0, 0.4);
+  --modal-shadow-color: rgba(0, 0, 0, 0.2);
+  --padding-small: 8px;
+  --padding-medium: 10px;
+  --padding-large: 20px;
+  --border-radius: 5px;
+  --box-shadow: 0px 0px 15px var(--shadow-color);
+  --hover-bg-color: #f3f3f3;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+}
+
+h2 {
+  margin-bottom: 1.5rem;
+  color: var(--heading-color);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: var(--secondary-color);
+  color: var(--heading-color);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+td {
+  border-bottom: 1px solid var(--border-color);
+}
+
+tr:hover {
+  background-color: var(--hover-bg-color);
+}
+
+button {
+  color: var(--text-color);
+  padding: var(--padding-small) var(--padding-medium);
+  margin-right: 8px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color var(--transition-speed);
+}
+
+label {
+  margin-bottom: 0.5rem;
+  color: #666;
+  display: block;
+  font-weight: bold;
+}
+
+input,
+select {
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+button[type="submit"] {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 0.8rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 1rem;
+  transition: background-color var(--transition-speed);
+}
+
+button[type="submit"]:hover {
+  background-color: var(--primary-hover-color);
+}
+
+button[type="button"] {
+  padding-top: 1rem;
+  cursor: pointer;
+  transition: background-color var(--transition-speed);
+}
+
+.user-list,
+.post-list {
+  max-width: 1200px;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+.add-user-button {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: var(--padding-medium) var(--padding-large);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 1.5rem;
+  transition: background-color var(--transition-speed);
+}
+
+.add-user-button:hover {
+  background-color: var(--primary-hover-color);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--overlay-background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  overflow: auto;
+  max-height: 90vh;
+  background-color: #fff;
+  padding: var(--padding-large);
+  border-radius: var(--border-radius);
+  box-shadow: 0px 0px 20px var(--modal-shadow-color);
+  width: 400px;
+  max-width: 100%;
+  position: relative;
+  margin: 15px;
+}
+
+.modal h2 {
+  margin: 0 0 1rem;
+  font-size: 1.5rem;
+  color: var(--heading-color);
+}
+
+.modal form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal form div {
+  margin-bottom: 1rem;
+}
+
+.modal input {
+  width: 100%;
+}
+
+.icon {
+  font-size: 20px;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: transform 0.2s ease;
+  vertical-align: middle;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+}
+
+.icon.edit-icon {
+  color: var(--heading-color);
+}
+
+.icon.delete-icon {
+  color: #ef5350;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.2em;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+.close-button:hover {
+  color: #000;
+}
+
+.users-search-input {
+  min-width: 400px;
+  padding: 10px;
+  margin-bottom: 1.5rem;
+  font-size: 16px;
+  border-radius: var(--border-radius);
+  border: 1px solid #ddd;
+  margin-right: 15px;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: var(--background-color);
+  padding: 10px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 10px 0;
+}
+
+.sidebar a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--heading-color);
+  position: relative;
+}
+
+.sidebar a .icon {
+  margin-left: 15px;
+  margin-right: 10px;
+  color: var(--heading-color);
+}
+
+.sidebar a.active {
+  font-weight: bold;
+}
+
+.sidebar a.active:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 100%;
+  background-color: var(--heading-color);
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  background-color: var(--background-color);
+  padding: 10px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.header .user-info {
+  display: flex;
+  align-items: center;
+}
+
+.header .avatar {
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.header h3,
+.header p {
+  margin: 0;
+}
+
+.header p {
+  margin-bottom: 5px;
+  font-size: 1rem;
+}
+
+.post-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.post-card {
+  flex: 1 1 300px;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  border: 1px solid var(--border-color);
+  flex-direction: column;
+  box-shadow: var(--box-shadow);
+  background-color: var(--background-color);
+}
+
+.post-title {
+  color: var(--heading-color);
+  font-size: 20px;
+  margin: 0;
+}
+
+.post-author {
+  font-size: 14px;
+  color: #666;
+  margin: 4px 0;
+}
+
+.post-body {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+@media screen and (max-width: 550px) {
+  .table-container {
+    overflow-x: auto;
+    width: 70vw;
+  }
+
+  .main-container {
+    flex-direction: column;
+  }
+
+  .header {
+    flex-direction: column;
+  }
+
+  .users-search-input {
+    min-width: unset;
+  }
+}
